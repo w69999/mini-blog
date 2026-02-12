@@ -72,3 +72,27 @@ if (postId !== null && posts[postId]) {
 
     document.getElementById("edit-post").href = `add.html?id=${postId}`;
 }
+
+const aiBtn = document.getElementById("ai-generate");
+
+if (aiBtn) {
+    aiBtn.addEventListener("click", async () => {
+        const titleInput = document.getElementById("title");
+        const contentInput = document.getElementById("content");
+
+        contentInput.value = "Generating content with AI... ✨";
+
+        
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        contentInput.value = `This post was generated using AI assistance.
+        
+It demonstrates integration with an external service and asynchronous data handling.
+
+✨ Modern web technologies
+✨ Client-side CMS
+✨ AI-powered content generation
+        `;
+    });
+}
+
