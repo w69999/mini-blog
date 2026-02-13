@@ -11,17 +11,23 @@ body {
     min-height: 100vh;
 }
 
+
+
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1.5rem 3rem;
     background: rgba(255,255,255,0.8);
     backdrop-filter: blur(10px);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 .logo {
     font-weight: 700;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    color: #d63384;
 }
 
 .nav a {
@@ -29,7 +35,16 @@ body {
     text-decoration: none;
     color: #d63384;
     font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
 }
+
+.nav a:hover {
+    transform: translateY(-3px);
+    color: #f43f7f;
+}
+
+
 
 .container {
     max-width: 900px;
@@ -37,12 +52,20 @@ body {
     padding: 1rem;
 }
 
+
+
 .post-card {
     background: white;
     border-radius: 20px;
     padding: 2rem;
     margin-bottom: 2rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
 .read-more {
@@ -51,7 +74,15 @@ body {
     color: #d63384;
     text-decoration: none;
     font-weight: 500;
+    transition: all 0.3s ease;
 }
+
+.read-more:hover {
+    transform: translateY(-3px);
+    color: #f43f7f;
+}
+
+
 
 .post-form input,
 .post-form textarea {
@@ -60,6 +91,15 @@ body {
     padding: 1rem;
     border-radius: 15px;
     border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.post-form input:focus,
+.post-form textarea:focus {
+    outline: none;
+    border-color: #f472b6;
+    box-shadow: 0 0 10px rgba(244,114,182,0.2);
 }
 
 .post-form button,
@@ -72,10 +112,59 @@ button {
     cursor: pointer;
     transition: all 0.3s ease; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
 }
 
 .post-form button:hover,
 button:hover {
     transform: translateY(-5px); 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+#delete-post,
+#edit-post {
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #f472b6, #ec4899);
+    padding: 0.5rem 1.2rem;
+    border-radius: 15px;
+    color: white;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+#delete-post:hover,
+#edit-post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav a {
+        margin: 0.5rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .post-card {
+        padding: 1.5rem;
+    }
+
+    .post-form button,
+    button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
 }

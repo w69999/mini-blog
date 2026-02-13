@@ -89,10 +89,4 @@ if (aiBtn) {
         
 It demonstrates integration with an external service and asynchronous data handling.
 
-✨ Modern web technologies
-✨ Client-side CMS
-✨ AI-powered content generation
-        `;
-    });
-}
-
+✨ Modern web tech
